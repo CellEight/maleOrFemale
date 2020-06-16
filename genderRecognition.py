@@ -15,6 +15,6 @@ while True:
     cv2.imshow("test", img)
     img = Image(torch.from_numpy(img))
     _,_,outputs = learn.predict(img)
-    gender = "Male" if outputs[0]>= outputs[1] else gender = "Female"
+    gender = ("Male" if outputs[0]>= outputs[1] else "Female")
     print(f"Looks like they're {gender} - P(Male)={round(outputs[0],3)}, P(Female)={round(outputs[1],3)}")
 camera.release()
